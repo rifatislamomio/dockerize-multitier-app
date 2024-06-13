@@ -5,10 +5,12 @@
 - Containerize a `Python` (backend) application 
 - Establish connectivity between the two applications
 - Set up `NGINX` as a reverse proxy (in between the frontend and backend server)
-
+<br>
 <p align="center">
   <img src="./diagrams/mulitier-diagram.png" />
+  <em>Networking between the containers</em>
 </p>
+<br>
 
 #### Run the Project:
 First, clone the repo locally and make sure the machine has docker installed and daemon is running.
