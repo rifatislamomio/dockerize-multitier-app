@@ -8,7 +8,7 @@
 <br>
 <p align="center">
   <img src="./diagrams/mulitier-diagram.png" />
-  <em>Networking between the containers</em>
+  <em>Straight forward networking between the containers</em>
 </p>
 <br>
 
