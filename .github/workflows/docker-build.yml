@@ -1,0 +1,28 @@
+name: Docker Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Docker Build
+        run: |
+          cd backend
+          docker build .
+      
+      - name: Docker Login
+      run: |
+        Docker login
+        docker build .
+
+  push:
+    runs-on: ubuntu-latest
+
