@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  backend-build-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,13 +16,37 @@ jobs:
       - name: Docker Build
         run: |
           cd backend
-          docker build .
+          make build
       
       - name: Docker Login
-      run: |
-        Docker login
-        docker build .
+        run: |
+          cd backend
+          make login 
 
-  push:
+      - name: Docker Push
+        run: |
+          cd backend
+          make push
+
+  frontend-build-push:
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Docker Build
+        run: |
+          cd frontend
+          make build
+      
+      - name: Docker Login
+        run: |
+          cd frontend
+          make login 
+
+      - name: Docker Push
+        run: |
+          cd frontend
+          make push
 
