@@ -21,12 +21,12 @@ jobs:
       - name: Docker Login
         run: |
           cd backend
-          make login 
+          make docker-login  
 
       - name: Docker Push
         run: |
           cd backend
-          make push
+          make docker-push 
 
   frontend-build-push:
     runs-on: ubuntu-latest
@@ -43,10 +43,10 @@ jobs:
       - name: Docker Login
         run: |
           cd frontend
-          make login 
+          make docker-login 
 
       - name: Docker Push
         run: |
           cd frontend
-          make push
+          make docker-push
 
