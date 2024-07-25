@@ -19,8 +19,8 @@ To run the project use the command below using `docker-compose`. To start the co
 $ docker-compose up -d
 ```
 
-3. **Configure Github Actions Workflow**:
-   - Provide these following variables as Github Action's environment secrets:
-     1. `DOCKER_USERNAME`: Provide `Docker ID` of the Docker account
-     2. `DOCKER_PASSWORD`: Provide password of the Docker account
+**Configure Github Actions Workflow**:
+  - Provide these following variables as Github Action's environment secrets:
+    1. `DOCKER_USERNAME`: Provide `Docker ID` of the Docker account
+    2. `DOCKER_PASSWORD`: Provide password of the Docker account
    
