@@ -12,15 +12,15 @@
 </p>
 <br>
 
-#### Run the Project:
+#### Run the Project (locally):
 First, clone the repo locally and make sure the machine has docker installed and daemon is running.
 To run the project use the command below using `docker-compose`. To start the containers in the background, use the -d option.
 ```shell
 $ docker-compose up -d
 ```
 
-**Configure Github Actions Workflow**:
-  - Provide these following variables as Github Action's environment secrets:
-    1. `DOCKER_USERNAME`: Provide `Docker ID` of the Docker account
-    2. `DOCKER_PASSWORD`: Provide password of the Docker account
+#### Configure Github Actions Workflow:
+Provide these following variables as Github Action's environment secrets:
+  - `DOCKER_USERNAME`: Provide `Docker ID` of the Docker account
+  - `DOCKER_PASSWORD`: Provide password of the Docker account
    
