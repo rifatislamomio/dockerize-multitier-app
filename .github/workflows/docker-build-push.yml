@@ -5,13 +5,13 @@ on:
     branches:
       - main
 
-env:
-  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKER_PASSWORDWORD: ${{ secrets.DOCKER_PASSWORDWORD }}
-
 jobs:
   backend-build-push:
     runs-on: ubuntu-latest
+    environment: dev
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORDWORD: ${{ secrets.DOCKER_PASSWORD }}
 
     steps:
       - name: Checkout Repository
@@ -34,6 +34,10 @@ jobs:
 
   frontend-build-push:
     runs-on: ubuntu-latest
+    environment: dev
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORDWORD: ${{ secrets.DOCKER_PASSWORD }}
 
     steps:
       - name: Checkout Repository
