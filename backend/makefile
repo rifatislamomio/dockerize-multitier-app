@@ -4,8 +4,8 @@ HOST_PORT:=8000
 CONTAINER_PORT:=3000
 CONTAINER_NAME:=backend
 DOCKER_REGISTRY:=docker.io
-DOCKER_USERNAME:=${DOCKER_USERNAME}
-DOCKER_PASSWORD:=${DOCKER_PASSWORD}
+DOCKER_USER:=${DOCKER_USERNAME}
+DOCKER_PASS:=${DOCKER_PASSWORD}
 
 build:
 	@ docker build -t ${IMAGE_NAME}:${VERSION} .
@@ -19,8 +19,8 @@ rm:
 
 docker-login:
 	@ echo "Docker Login"
-	@ echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin ${DOCKER_REGISTRY}
+	@ echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin ${DOCKER_REGISTRY}
 
 docker-push:
-	@ docker tag ${IMAGE_NAME}:${VERSION} ${DOCKER_USERNAME}/${IMAGE_NAME}:${VERSION}
-	@ docker push ${DOCKER_USERNAME}/${IMAGE_NAME}:${VERSION}
+	@ docker tag ${IMAGE_NAME}:${VERSION} ${DOCKER_USER}/${IMAGE_NAME}:${VERSION}
+	@ docker push ${DOCKER_USER}/${IMAGE_NAME}:${VERSION}

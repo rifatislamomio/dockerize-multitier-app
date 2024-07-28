@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
 jobs:
   backend-build-push:
     runs-on: ubuntu-latest
@@ -17,16 +21,16 @@ jobs:
         run: |
           cd backend
           make build
-      
+
       - name: Docker Login
         run: |
           cd backend
-          make docker-login  
+          make docker-login
 
       - name: Docker Push
         run: |
           cd backend
-          make docker-push 
+          make docker-push
 
   frontend-build-push:
     runs-on: ubuntu-latest
@@ -39,14 +43,13 @@ jobs:
         run: |
           cd frontend
           make build
-      
+
       - name: Docker Login
         run: |
           cd frontend
-          make docker-login 
+          make docker-login
 
       - name: Docker Push
         run: |
           cd frontend
           make docker-push
-
