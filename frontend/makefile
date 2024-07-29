@@ -19,7 +19,6 @@ rm:
 
 docker-login:
 	@ echo "Docker Login"
-	@ echo ${DOCKER_USER}
 	@ echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USER} --password-stdin ${DOCKER_REGISTRY}
 
 docker-push:
