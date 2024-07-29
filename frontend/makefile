@@ -5,7 +5,7 @@ CONTAINER_PORT:=80
 CONTAINER_NAME:=frontend
 DOCKER_REGISTRY:=docker.io
 DOCKER_USER:=${DOCKER_USERNAME}
-DOCKER_PASS:=${DOCKER_PASSWORD}
+DOCKER_PASSWORD:=${DOCKER_ACCESS_TOKEN}
 
 build:
 	@ docker build -t ${IMAGE_NAME}:${VERSION} .
@@ -19,7 +19,8 @@ rm:
 
 docker-login:
 	@ echo "Docker Login"
-	@ echo ${DOCKER_PASS} | docker login -u ${DOCKER_USER} --password-stdin ${DOCKER_REGISTRY}
+	@ echo ${DOCKER_USER}
+	@ echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USER} --password-stdin ${DOCKER_REGISTRY}
 
 docker-push:
 	@ docker tag ${IMAGE_NAME}:${VERSION} ${DOCKER_USER}/${IMAGE_NAME}:${VERSION}
